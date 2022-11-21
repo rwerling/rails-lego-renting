@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+
+      <div class="row mb-3">
+        <% @legos.each do |lego| %>
+          <div class="col-12 col-md-6 mb-3">
+            <div class="card-trip">
+              <img src="https://i.pinimg.com/564x/e9/8d/30/e98d3064d7488a8b8c75231fd0bb418c.jpg" />
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= link_to lego.title, lego_path(lego) %></h2>
+                  <p><%= lego.number_of_parts %> pieces</p>
+                </div>
+                <h2 class="card-trip-pricing">£99.99</h2>
+                <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+              </div>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
