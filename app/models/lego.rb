@@ -1,0 +1,2 @@
+class Lego < ApplicationRecord
+end
