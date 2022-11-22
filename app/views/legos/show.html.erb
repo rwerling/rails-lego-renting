@@ -12,7 +12,10 @@
           </div>
         </div>
       </div>
-          <%= link_to "Book now", new_lego_booking_path(@lego), class: "btn btn-flat" %>
+        <div>
+          <p><%= link_to "Book now", new_lego_booking_path(@lego), class: "btn btn-flat" %></p>
+          <p><%= link_to 'Delete Lego model', lego_path(@lego), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'text-danger' %></small></p>
+        </div>
       <p class="pt-3"><%= link_to "Back to all models", legos_path %></p>
     </div>
   </div>
