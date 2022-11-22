@@ -26,9 +26,11 @@
           </li>
           </button>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
+          <button type="button" class="btn btn-dark">
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path %>
+            </li>
+          </button>
         <% end %>
       </ul>
     </div>
