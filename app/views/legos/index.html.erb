@@ -8,7 +8,9 @@
         <% @legos.reverse_each do |lego| %>
           <div class="col-12 col-md-6 mb-3">
             <div class="card-trip">
-              <img src="https://i.pinimg.com/564x/e9/8d/30/e98d3064d7488a8b8c75231fd0bb418c.jpg" />
+              <%# <img class="card-image" src= <%= cl_image_path(lego.photo.key) %> <%#/> %>
+              <%= cl_image_tag(lego.photo.key, class:"card-image") %>
+
               <div class="card-trip-infos">
                 <div>
                   <h2><%= link_to lego.title, lego_path(lego) %></h2>

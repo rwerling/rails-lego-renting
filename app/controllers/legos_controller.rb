@@ -13,6 +13,7 @@ class LegosController < ApplicationController
 
   def create
     @lego = Lego.new(lego_params)
+    raise
     @lego.user_id = 1 # placeholder for current user
     @lego.save
     redirect_to legos_path
@@ -27,6 +28,6 @@ class LegosController < ApplicationController
   private
 
   def lego_params
-    params.require(:lego).permit(:title, :number_of_parts)
+    params.require(:lego).permit(:title, :number_of_parts, :photo)
   end
 end
