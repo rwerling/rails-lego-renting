@@ -2,8 +2,10 @@
   <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
 
+      <%= link_to "Add a new Lego model", new_lego_path, class: 'btn btn-primary' %>
+
       <div class="row mb-3">
-        <% @legos.each do |lego| %>
+        <% @legos.reverse_each do |lego| %>
           <div class="col-12 col-md-6 mb-3">
             <div class="card-trip">
               <img src="https://i.pinimg.com/564x/e9/8d/30/e98d3064d7488a8b8c75231fd0bb418c.jpg" />
@@ -17,9 +19,9 @@
               </div>
             </div>
           </div>
-
         <% end %>
       </div>
+
     </div>
   </div>
 </div>

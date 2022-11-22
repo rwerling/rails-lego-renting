@@ -13,6 +13,9 @@ class LegosController < ApplicationController
 
   def create
     @lego = Lego.new(lego_params)
+    @lego.user_id = 1 # placeholder for current user
+    @lego.save
+    redirect_to legos_path
   end
 
   def destroy
