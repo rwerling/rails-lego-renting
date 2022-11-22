@@ -18,5 +18,12 @@
         </div>
       <p class="pt-3"><%= link_to "Back to all models", legos_path %></p>
     </div>
+
+
+    <% @lego.bookings.each do |booking| %>
+      <%= booking.review.comment %>
+      <%= booking.review.rating %>
+
+    <% end %>
   </div>
 </div>

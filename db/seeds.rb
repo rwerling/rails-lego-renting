@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
-
+Review.destroy_all
 Lego.destroy_all
 User.destroy_all
 
@@ -23,4 +23,15 @@ user_1 = User.create(email: "test@gmail.com", password: "123456")
   )
   lego.save!
 end
+
+puts 'Creating 100 fake reviews .....'
+booking_1 = Booking.create(start_date: Date.today, end_date: Date.today, user: user_1, lego: Lego.last)
+
+  review = Review.new(
+    comment: "This is a great lego stone. would recommend!!!",
+    rating: rand(1..5),
+    booking: booking_1
+  )
+
+review.save!
 puts 'Finished!'
