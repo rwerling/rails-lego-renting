@@ -21,7 +21,7 @@ class LegosController < ApplicationController
   def destroy
     @lego = Lego.find(params[:id])
     @lego.destroy
-    redirect_to legos_path
+    redirect_to legos_path, status: :see_other
   end
 
   private

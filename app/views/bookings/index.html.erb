@@ -1,3 +1,25 @@
-<% @bookings.each do |booking| %>
-  <%= booking.id  %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>All bookings</h1>
+      <div class="row mb-3">
+        <% @bookings.each do |booking| %>
+          <div class="col-12 col-lg-6 mb-3">
+            <div class="card-product">
+              <%# <%= cl_image_tag(lego.photo.key, class:"card-image") %> <%#%>
+              <div class="card-product-infos">
+                <h2><%= booking.lego.title %></h2>
+                <p>E-Mail: <%= booking.user.email %> </p>
+                <p>User ID: <%= booking.user.id %> </p>
+                <p>Start: <%= booking.start_date %></p>
+                <p>End: <%= booking.end_date %></p>
+
+              </div>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

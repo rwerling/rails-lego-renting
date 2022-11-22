@@ -4,23 +4,34 @@
 
       <div class="card-trip mb-3">
         <img class="card-image" src="https://i.pinimg.com/564x/e9/8d/30/e98d3064d7488a8b8c75231fd0bb418c.jpg" />
-
         <div class="card-trip-infos">
           <div>
             <h1><%= @lego.title %></h1>
             <p>Short description here!</p>
+            <p><%= link_to "Add review", new_lego_booking_path(@lego) %></p>
           </div>
+          <button type="button" class="btn btn-info">
+            <%= link_to "Book now", new_lego_booking_path(@lego) %>
+          </button>
         </div>
       </div>
-          <%= link_to "Book now", new_lego_booking_path(@lego), class: "btn btn-flat" %>
-      <p class="pt-3"><%= link_to "Back to all models", legos_path %></p>
-    </div>
 
+      <%# <div class="row mb-3"> %>
+        <%# <% @lego.bookings.each do |booking| %> %>
+          <%# <div class="col-12 col-lg-6 mb-3"> %>
+            <%# <div class="card-product"> %>
+              <%# <%= cl_image_tag(lego.photo.key, class:"card-image") %> <%#%>
+              <%# <div class="card-product-infos"> %>
+                <%# <h2><%= booking.review.rating %></h2> %>
+                <%# <p> <%= booking.review.comment %> </p> %>
+              <%# </div> %>
+            <%# </div> %>
+          <%# </div> %>
+        <%# <% end %> %>
+      <%# </div> %>
 
-    <% @lego.bookings.each do |booking| %>
-      <%= booking.review.comment %>
-      <%= booking.review.rating %>
-
-    <% end %>
+      <div>
+        <p><%= link_to 'Delete Lego model', lego_path(@lego), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'text-danger' %></small></p>
+      </div>
   </div>
 </div>
