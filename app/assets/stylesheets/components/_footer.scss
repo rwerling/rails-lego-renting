@@ -1,12 +1,12 @@
 .footer {
-  background: #6a6868;
+  background: black;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 100px;
   padding: 0px 50px;
-  color: rgb(154, 152, 152);
+  color: rgb(195, 193, 193);
 }
 
 .footer-links {
@@ -15,7 +15,7 @@
 }
 
 .footer-links a {
-  color: rgb(166, 151, 230);
+  color: yellow;
   opacity: 0.80;
   text-decoration: none;
   font-size: 24px;
