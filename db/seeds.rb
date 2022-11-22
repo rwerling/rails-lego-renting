@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
+
+Lego.destroy_all
+User.destroy_all
+
 puts 'Creating 100 fake legos ...'
 
 user_1 = User.create(email: "test@gmail.com", password: "123456")
