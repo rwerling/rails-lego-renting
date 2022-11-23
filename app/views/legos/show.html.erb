@@ -12,7 +12,6 @@
           <div>
             <h1><%= @lego.title %></h1>
             <p>Short description here!</p>
-            <p><%= link_to "Add review", new_lego_booking_path(@lego) %></p>
           </div>
           <button type="button" class="btn btn-info">
             <%= link_to "Book now", new_lego_booking_path(@lego) %>
@@ -37,7 +36,14 @@
         <p>There are no reviews for this model yet.</p>
         <% end %>
         </div>
-
+      <!-- reviews doesnt show if user has no booking, look for review maybe?? -->
+      <% unless current_user.bookings.where(lego: @lego).empty? %>
+        <%= simple_form_for([@lego, @booking, @review]) do |f| %>
+          <%= f.input :rating %>
+          <%= f.input :comment %>
+          <%= f.submit class: 'btn btn-primary' %>
+        <% end %>
+      <% end %>
       <div>
         <p><%= link_to 'Delete Lego model', lego_path(@lego), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'text-danger' %></small></p>
       </div>

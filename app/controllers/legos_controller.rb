@@ -7,6 +7,8 @@ class LegosController < ApplicationController
 
   def show
     @lego = Lego.find(params[:id])
+    @booking = Booking.where(user: current_user).last
+    @review = Review.new
   end
 
   def new
