@@ -2,6 +2,11 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+
+    # @myactivebookings = Booking.where(user_id == user_signed_in)
+    # @mypassivebookings = Booking.where(id: @booking.lego_id)
+    # or loop with if else?
+
   end
 
   def new
