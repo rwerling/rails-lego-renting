@@ -16,19 +16,24 @@
         </div>
       </div>
 
-      <%# <div class="row mb-3"> %>
-        <%# <% @lego.bookings.each do |booking| %> %>
-          <%# <div class="col-12 col-lg-6 mb-3"> %>
-            <%# <div class="card-product"> %>
-              <%# <%= cl_image_tag(lego.photo.key, class:"card-image") %> <%#%>
-              <%# <div class="card-product-infos"> %>
-                <%# <h2><%= booking.review.rating %></h2> %>
-                <%# <p> <%= booking.review.comment %> </p> %>
-              <%# </div> %>
-            <%# </div> %>
-          <%# </div> %>
-        <%# <% end %> %>
-      <%# </div> %>
+
+        <% if @lego.reviews.present? %>
+        <div class="row mb-3">
+          <% @lego.reviews.each do |review| %>
+            <div class="col-12 col-lg-6 mb-3">
+              <div class="card-product">
+
+                  <div class="card-product-infos">
+                    <h2><%= review.comment %> </h2>
+                    <p> <%= review.rating %> </p>
+                  </div>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+        <p>There are no reviews for this model yet.</p>
+        <% end %>
+        </div>
 
       <div>
         <p><%= link_to 'Delete Lego model', lego_path(@lego), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'text-danger' %></small></p>
