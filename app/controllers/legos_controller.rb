@@ -1,4 +1,6 @@
 class LegosController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @legos = Lego.all
   end
