@@ -4,9 +4,9 @@
       <div class="addbutton">
       <%= link_to "+ New Model", new_lego_path, class: 'add' %>
       </div>
-      <div class="row mb-3" onclick="this.querySelector('a').click(); return true;">
+      <div class="row mb-3">
         <% @legos.reverse_each do |lego| %>
-          <div class="col-12 col-md-6 mb-3">
+          <div class="col-12 col-md-6 mb-3" onclick="this.querySelector('a').click(); return true;">
             <div class="card-trip">
       <% if lego.photo.attached? %>
           <%= cl_image_tag(lego.photo.key, class:"card-image") %>
