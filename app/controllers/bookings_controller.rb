@@ -18,6 +18,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.lego = Lego.find(params[:lego_id])
+    @lego = Lego.find(params[:lego_id])
+    date_dif =  Time.diff(Time.parse(@booking.start_date), Time.parse(@booking.end_date))[:day]
+    calculation = date_dif * (@lego.number_of_parts * 2)
+    @booking.final_price = calculation
     @lego = @booking.lego
     @booking.save!
     redirect_to @lego
@@ -29,7 +33,6 @@ class BookingsController < ApplicationController
   end
 
  private
-
 
   def booking_params
     params.require(:booking).permit(:lego, :start_date, :end_date)
