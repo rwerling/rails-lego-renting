@@ -36,3 +36,18 @@ body {
 .navbar .btn a:hover {
   color: yellow;
 }
+
+.home-booking {
+  display: flex;
+}
+
+.email {
+  background-color: rgba(0, 0, 0, 0.097);
+  width: 170px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  border-radius: 15px;
+}
