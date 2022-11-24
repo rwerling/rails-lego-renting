@@ -13,7 +13,7 @@
         <% else %>
           <img src="https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80" alt="photo">
         <% end %>
-              <%# <%= cl_image_tag(lego.photo.key, class:"card-image") %> 
+              <%# <%= cl_image_tag(lego.photo.key, class:"card-image") %>
 
               <div class="card-trip-infos">
                 <div>
@@ -21,7 +21,7 @@
                   <p><%= lego.number_of_parts %> pieces</p>
                   <p>Owner: <%= lego.user_id %></p>
                 </div>
-                <h2 class="card-trip-pricing">£99.99</h2>
+                <h2 class="card-trip-pricing"><%=lego.number_of_parts * 2 %> EUR/DAY </h2>
                 <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
               </div>
             </div>
