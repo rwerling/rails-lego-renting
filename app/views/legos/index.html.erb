@@ -1,8 +1,10 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-
-      <div class="row mb-3">
+      <div class="addbutton">
+      <%= link_to "+ New Model", new_lego_path, class: 'add' %>
+      </div>
+      <div class="row mb-3" onclick="this.querySelector('a').click(); return true;">
         <% @legos.reverse_each do |lego| %>
           <div class="col-12 col-md-6 mb-3">
             <div class="card-trip">
@@ -25,9 +27,6 @@
             </div>
           </div>
         <% end %>
-      </div>
-      <div class="addbutton">
-      <%= link_to "Add a new Lego model", new_lego_path, class: 'btn btn-primary' %>
       </div>
     </div>
   </div>
