@@ -6,7 +6,6 @@ class BookingsController < ApplicationController
     # @myactivebookings = Booking.where(user_id == user_signed_in)
     # @mypassivebookings = Booking.where(id: @booking.lego_id)
     # or loop with if else?
-
   end
 
   def new
@@ -19,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.lego = Lego.find(params[:lego_id])
     @lego = Lego.find(params[:lego_id])
-    date_dif =  Time.diff(Time.parse(@booking.start_date), Time.parse(@booking.end_date))[:day]
+    date_dif = Time.diff(Time.parse(@booking.start_date), Time.parse(@booking.end_date))[:day]
     calculation = date_dif * (@lego.number_of_parts * 2)
     @booking.final_price = calculation
     @lego = @booking.lego
