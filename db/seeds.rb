@@ -28,7 +28,6 @@ lego_img_sushi = URI.open('app/assets/images/lego_sushi.jpg')
 # create fake user
 user_1 = User.create(email: "test@gmail.com", password: "123456")
 
-
 lego_army = Lego.new do |u|
   u.title = 'Star Wars Clone Army'
   u.number_of_parts = rand(100..300)
