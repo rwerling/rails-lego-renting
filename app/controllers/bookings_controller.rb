@@ -1,11 +1,12 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all
+    # @bookings = Booking.all
 
-    # @myactivebookings = Booking.where(user_id == user_signed_in)
-    # @mypassivebookings = Booking.where(id: @booking.lego_id)
-    # or loop with if else?
+    @myactivebookings = Booking.where(user: current_user)
+    mylegos = Lego.where(user: current_user)
+
+    @mypassivebookings = Booking.all.select { |b| mylegos.include?(b.lego) }
 
   end
 
