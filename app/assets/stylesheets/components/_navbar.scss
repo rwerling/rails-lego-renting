@@ -1,5 +1,5 @@
 body {
-  padding-top: 65px;
+  padding-top: 100px;
 }
 
 .navbar {
@@ -20,11 +20,15 @@ body {
   width: 50px;
 }
 
-// .navbar a {
-//   color: rgb(0, 0, 0);
-//   text-decoration: none;
-// }
+.navbar .btn a {
+  color: white;
+  text-decoration: none;
+}
 
-// a:hover {
-//   color: yellow;
-// }
+.navbar .btn {
+  border-radius: 15px;
+}
+
+.navbar .btn a:hover {
+  color: yellow;
+}
