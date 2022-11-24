@@ -1,8 +1,20 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <div class="addbutton">
-      <%= link_to "+ New Model", new_lego_path, class: 'add' %>
+      <div class="search-add">
+      <div class="search">
+        <%= form_with url: legos_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a model"
+            %>
+            <%= submit_tag "Search", class: "btn btn-outline-secondary" %>
+          <% end %>
+        </div>
+        <div class="addbutton">
+          <%= link_to "+ New Model", new_lego_path, class: 'add' %>
+        </div>
       </div>
       <div class="cursor row mb-3">
         <% @legos.reverse_each do |lego| %>
@@ -21,7 +33,7 @@
                   <p><%= lego.number_of_parts %> pieces</p>
                   <p>Owner: <%= lego.user_id %></p>
                 </div>
-                <h2 class="card-trip-pricing"><%=lego.number_of_parts * 2 %> EUR/DAY </h2>
+                <h2 class="card-trip-pricing"><%=lego.number_of_parts * 2 %> EUR / day </h2>
                 <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
               </div>
             </div>

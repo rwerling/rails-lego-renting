@@ -5,6 +5,14 @@ class LegosController < ApplicationController
     @legos = Lego.all
   end
 
+  def index
+    if params[:query].present?
+      @legos = Lego.where("title ILIKE ?", "%#{params[:query]}%")
+    else
+      @legos = Lego.all
+    end
+  end
+
   def show
     @lego = Lego.find(params[:id])
     @booking = Booking.where(user: current_user).last
