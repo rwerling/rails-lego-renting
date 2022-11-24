@@ -1,10 +1,14 @@
 class LegosController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @legos = Lego.all
   end
 
   def show
     @lego = Lego.find(params[:id])
+    @booking = Booking.where(user: current_user).last
+    @review = Review.new
   end
 
   def new
