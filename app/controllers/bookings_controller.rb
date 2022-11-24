@@ -7,7 +7,6 @@ class BookingsController < ApplicationController
     mylegos = Lego.where(user: current_user)
 
     @mypassivebookings = Booking.all.select { |b| mylegos.include?(b.lego) }
-
   end
 
   def new
