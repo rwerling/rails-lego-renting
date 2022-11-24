@@ -31,7 +31,8 @@
                 <div>
                   <h2><%= link_to lego.title, lego_path(lego) %></h2>
                   <p><%= lego.number_of_parts %> pieces</p>
-                  <p>Owner: <%= lego.user_id %></p>
+                  <p>Owner: <%= lego.user.email %></p>
+
                 </div>
                 <h2 class="card-trip-pricing"><%=lego.number_of_parts * 2 %> EUR / day </h2>
                 <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>

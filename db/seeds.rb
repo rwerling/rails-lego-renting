@@ -26,7 +26,10 @@ lego_img_skyscraper = URI.open('app/assets/images/lego_skyscraper.jpg')
 lego_img_sushi = URI.open('app/assets/images/lego_sushi.jpg')
 
 # create fake user
-user_1 = User.create(email: "test@gmail.com", password: "123456")
+user_1 = User.create(email: "ray@mail.com", password: "123456")
+user_2 = User.create(email: "lisa@mail.com", password: "123456")
+user_3 = User.create(email: "sabrina@mail.com", password: "123456")
+user_4 = User.create(email: "xiomara@mail.com", password: "123456")
 
 lego_army = Lego.new do |u|
   u.title = 'Star Wars Clone Army'
@@ -55,7 +58,7 @@ lego_breaking.save
 lego_burger = Lego.new do |u|
   u.title = 'Fast Food Joints'
   u.number_of_parts = rand(100..300)
-  u.user_id = user_1.id
+  u.user_id = user_2.id
   u.photo.attach(io: lego_img_burger, filename: 'test', content_type: 'image/jpg')
 end
 lego_burger.save
@@ -63,7 +66,7 @@ lego_burger.save
 lego_cabin = Lego.new do |u|
   u.title = 'Creepy Cabin'
   u.number_of_parts = rand(100..300)
-  u.user_id = user_1.id
+  u.user_id = user_2.id
   u.photo.attach(io: lego_img_cabin, filename: 'test', content_type: 'image/jpg')
 end
 lego_cabin.save
@@ -71,7 +74,7 @@ lego_cabin.save
 lego_coffee = Lego.new do |u|
   u.title = 'Exploding Coffee Machine'
   u.number_of_parts = rand(100..300)
-  u.user_id = user_1.id
+  u.user_id = user_2.id
   u.photo.attach(io: lego_img_coffee, filename: 'test', content_type: 'image/jpg')
 end
 lego_coffee.save
@@ -79,7 +82,7 @@ lego_coffee.save
 lego_house = Lego.new do |u|
   u.title = 'Bautiful Townhouse'
   u.number_of_parts = rand(100..300)
-  u.user_id = user_1.id
+  u.user_id = user_3.id
   u.photo.attach(io: lego_img_house, filename: 'test', content_type: 'image/jpg')
 end
 lego_house.save
@@ -87,7 +90,7 @@ lego_house.save
 lego_kitchen = Lego.new do |u|
   u.title = 'Retro Kitchen'
   u.number_of_parts = rand(100..300)
-  u.user_id = user_1.id
+  u.user_id = user_3.id
   u.photo.attach(io: lego_img_kitchen, filename: 'test', content_type: 'image/jpg')
 end
 lego_kitchen.save
@@ -95,7 +98,7 @@ lego_kitchen.save
 lego_oops = Lego.new do |u|
   u.title = 'Ooops!'
   u.number_of_parts = rand(100..300)
-  u.user_id = user_1.id
+  u.user_id = user_3.id
   u.photo.attach(io: lego_img_oops, filename: 'test', content_type: 'image/jpg')
 end
 lego_oops.save
@@ -103,7 +106,7 @@ lego_oops.save
 lego_pizza = Lego.new do |u|
   u.title = 'Pizza slice'
   u.number_of_parts = rand(100..300)
-  u.user_id = user_1.id
+  u.user_id = user_4.id
   u.photo.attach(io: lego_img_pizza, filename: 'test', content_type: 'image/jpg')
 end
 lego_pizza.save
@@ -111,7 +114,7 @@ lego_pizza.save
 lego_porsche = Lego.new do |u|
   u.title = 'Porsche 911'
   u.number_of_parts = rand(100..300)
-  u.user_id = user_1.id
+  u.user_id = user_4.id
   u.photo.attach(io: lego_img_porsche, filename: 'test', content_type: 'image/jpg')
 end
 lego_porsche.save
@@ -119,7 +122,7 @@ lego_porsche.save
 lego_skyscraper = Lego.new do |u|
   u.title = 'Comic Skyscraper'
   u.number_of_parts = rand(100..300)
-  u.user_id = user_1.id
+  u.user_id = user_4.id
   u.photo.attach(io: lego_img_skyscraper, filename: 'test', content_type: 'image/jpg')
 end
 lego_skyscraper.save
@@ -127,7 +130,7 @@ lego_skyscraper.save
 lego_sushi = Lego.new do |u|
   u.title = 'Sushi Stand'
   u.number_of_parts = rand(100..300)
-  u.user_id = user_1.id
+  u.user_id = user_4.id
   u.photo.attach(io: lego_img_sushi, filename: 'test', content_type: 'image/jpg')
 end
 lego_sushi.save

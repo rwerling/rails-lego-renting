@@ -19,6 +19,7 @@ class LegosController < ApplicationController
     @review = Review.new
   end
 
+
   def new
     @lego = Lego.new
   end

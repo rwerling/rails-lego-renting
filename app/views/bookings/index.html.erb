@@ -6,14 +6,12 @@
         <% @myactivebookings.each do |booking| %>
           <div class="col-12 col-lg-6 mb-3">
             <div class="card-product">
-              <%# <%= cl_image_tag(lego.photo.key, class:"card-image") %> <%#%>
+              <%= cl_image_tag(booking.lego.photo.key, class:"card-image") %>
               <div class="card-product-infos">
                 <h2><%= booking.lego.title %></h2>
-                <p>E-Mail: <%= booking.user.email %> </p>
-                <p>User ID: <%= booking.user.id %> </p>
-                <p>Start: <%= booking.start_date %></p>
-                <p>End: <%= booking.end_date %></p>
-                <p>Price: <%= booking.final_price %></p>
+                <p>Owner: <%= booking.lego.user.email %></p>
+                <p>Start: <%= booking.start_date %> End: <%= booking.end_date %></p>
+                <p><strong>Total Price: <%= booking.final_price %></strong></p>
 
               </div>
             </div>
@@ -26,14 +24,12 @@
         <% @mypassivebookings.each do |booking| %>
           <div class="col-12 col-lg-6 mb-3">
             <div class="card-product">
-              <%# <%= cl_image_tag(lego.photo.key, class:"card-image") %> <%#%>
+              <%= cl_image_tag(booking.lego.photo.key, class:"card-image") %>
               <div class="card-product-infos">
                 <h2><%= booking.lego.title %></h2>
-                <p>E-Mail: <%= booking.user.email %> </p>
-                <p>User ID: <%= booking.user.id %> </p>
-                <p>Start: <%= booking.start_date %></p>
-                <p>End: <%= booking.end_date %></p>
-                <p>Price: <%= booking.final_price %></p>
+                <p>Renter: <%= booking.user.email %> </p>
+                <p>Start: <%= booking.start_date %> End: <%= booking.end_date %></p>
+                <p><strong>Total Price: <%= booking.final_price %></strong></p>
 
               </div>
             </div>
