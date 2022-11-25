@@ -1,14 +1,22 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1 pb-3">
-      <h1>Create a new Lego model</h1>
-      <%= simple_form_for @lego do |f| %>
-        <%= f.input :title %>
-        <%= f.input :number_of_parts %>
-        <%= f.input :photo, as: :file %>
-        <%= f.submit class: 'btn btn-primary' %>
-      <% end %>
+  <div class="row justify-content-center">
+    <div class="create-back">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 pb-3">
+        <div class="create">
+          <h1>Create a new Lego model</h1>
+          <%= simple_form_for @lego do |f| %>
+            <%= f.input :title %>
+            <%= f.input :number_of_parts %>
+            <%= f.input :photo, as: :file %>
+            <div class="d-flex justify-content-between">
+              <%= f.submit class: 'btn btn-dark' %>
+              <div class="back">
+                <%= link_to "Back", legos_path %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <%= link_to "Back to all Lego sets", legos_path %>
   </div>
 </div>
