@@ -8,16 +8,18 @@
         <% else %>
           <img src="https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80" alt="photo">
         <% end %>
-        <div class="card-trip-infos">
-          <div>
+      </div>
+
+      <div class="card-trip-wrapper">
+        <div class="card-trip-infos-show">
+          <div class="card-trip-text">
             <h1><%= @lego.title %></h1>
-            <p>Short description here!</p>
+            <p>This 1:200 scale model is designed in 3 sections, faithfully recreating the features of the Titanic. The cross section reveals interior details like the first-class dining room, the grand staircase, one of the boiler rooms and many cabins from the different passenger classes. Bring the story of the Titanic to life by recreating details such as the ship's bridge, promenade deck, reading lounge, swimming pool and many more. Over 9,000 pieces for the ultimate building project. This model is one of the largest LEGO models ever at over 135 cm long. And with over 9,000 pieces, it provides many hours of building pleasure culminating in a stunning piece to display with pride.</p>
           </div>
           <button type="button" class="book-button btn btn-info">
             <%= link_to "Book now", new_lego_booking_path(@lego) %>
           </button>
         </div>
-      </div>
 
         <% if @lego.reviews.present? %>
         <div class="row mb-3">
@@ -35,7 +37,7 @@
         <% else %>
         <p>There are no reviews for this model yet.</p>
         <% end %>
-        </div>
+      </div>
       <!-- reviews doesnt show if user has no booking, look for review maybe?? -->
       <% unless current_user.bookings.where(lego: @lego).empty? %>
         <%= simple_form_for([@lego, @booking, @review]) do |f| %>
@@ -44,8 +46,9 @@
           <%= f.submit class: 'btn btn-primary' %>
         <% end %>
       <% end %>
-      <div>
+      <div class="delete-wrapper">
         <p><%= link_to 'Delete Model', lego_path(@lego), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %></small></p>
       </div>
+    </div>
   </div>
 </div>

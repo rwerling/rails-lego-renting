@@ -22,14 +22,39 @@
   margin: 0;
 }
 
+.card-trip-wrapper {
+  background: white;
+  padding: 60px;
+}
+
 
 .card-trip-infos {
-  padding: 16px;
+  padding: 30px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
-  height: 120px;
+  height: auto;
+}
+
+.card-trip-infos-show {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  height: auto;
+}
+
+.card-trip-reviews {
+  position: relative;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
+  display: flex;
+}
+
+.card-trip-text {
+  max-width: 700px;
 }
 
 .card-trip-infos .card-trip-user {
@@ -47,4 +72,8 @@
 
 .cursor {
   cursor: pointer;
+}
+
+.delete-wrapper {
+  margin-top: 20px;
 }
