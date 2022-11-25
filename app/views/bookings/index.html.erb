@@ -13,7 +13,6 @@
                 <p>Owner: <%= booking.lego.user.email %></p>
                 <p>Start: <%= booking.start_date %> End: <%= booking.end_date %></p>
                 <p><strong>Total Price: <%= booking.final_price %></strong></p>
-
               </div>
             </div>
           </div>
@@ -30,7 +29,7 @@
                 <h2><%= booking.lego.title %></h2>
                 <p>Renter: <%= booking.user.email %> </p>
                 <p>Start: <%= booking.start_date %> End: <%= booking.end_date %></p>
-                <p><strong>Total Price: <%= booking.final_price %></strong></p>
+                <p><strong>Total Price: <%= booking.final_price/10 %>EUR</strong></p>
 
               </div>
             </div>

@@ -1,15 +1,15 @@
-<div class="container">
-
-  <div class="row hero-container">
-    <%# <div class="col-12 mb-4 hero-pic" style="background-image: url(https://s14419.pcdn.co/de/wp-content/uploads/2018/04/Lego.jpg)"> %>
-    <div class="col-12 mb-4 hero-pic" style="background-image: url(<%=image_path('lego_afol.jpg')%>)">
-      <div>
-        <h1 class="hero-h1"><b>GET A NEW MODEL EVERY MONTH.</b></h1>
-        <h2>Check our subscriptions.<h2>
-      </div>
+<div class="hero-container-full">
+  <%# <div class="col-12 mb-4 hero-pic" style="background-image: url(https://s14419.pcdn.co/de/wp-content/uploads/2018/04/Lego.jpg)"> %>
+  <div class="hero-pic" style="background-image: url(<%=image_path('lego_afol.jpg')%>)">
+    <div>
+      <h1><b>GET A NEW MODEL EVERY MONTH.</b></h1>
+      <h2>Check our plans.<h2>
     </div>
   </div>
+</div>
 
+
+<div class="container">
   <div class="row justify-content-end">
     <div class="col-8 mb-4">
         <%= form_with url: legos_path, method: :get, class: "d-flex" do %>
