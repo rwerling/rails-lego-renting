@@ -1,46 +1,48 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <div class="search-add">
-      <div class="search">
-        <%= form_with url: legos_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find a model"
-            %>
-            <%= submit_tag "Search", class: "btn btn-outline-secondary" %>
-          <% end %>
-        </div>
-        <div class="addbutton">
-          <%= link_to "+ New Model", new_lego_path, class: 'add' %>
-        </div>
-      </div>
-      <div class="cursor row mb-3">
-        <% @legos.reverse_each do |lego| %>
-          <div class="col-12 col-md-4 mb-3" onclick="this.querySelector('a').click(); return true;">
-            <div class="card-trip">
-      <% if lego.photo.attached? %>
-          <%= cl_image_tag(lego.photo.key, class:"card-image") %>
-        <% else %>
-          <img src="https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80" alt="photo">
-        <% end %>
-              <%# <%= cl_image_tag(lego.photo.key, class:"card-image") %>
 
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= link_to lego.title, lego_path(lego) %></h2>
-                  <p><%= lego.number_of_parts %> pieces</p>
-                  <p>Owner: <%= lego.user.email %></p>
-
-                </div>
-                <h2 class="card-trip-pricing"><%=lego.number_of_parts * 2 %> EUR / day </h2>
-                <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
-              </div>
-            </div>
-          </div>
-        <% end %>
+  <div class="row hero-container">
+    <%# <img class="hero-pic col-12 mb-4" src="https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80" alt="photo">
+    <h1></h1> %>
+    <div class="col-12 mb-4 hero-pic" style="background-image: url(https://s14419.pcdn.co/de/wp-content/uploads/2018/04/Lego.jpg)">
+      <div>
+        <h1 class="hero-h1"><b>GET A NEW MODEL EVERY WEEK.</b></h1>
+        <h2>Check our subscriptions.<h2>
       </div>
     </div>
+  </div>
+
+  <div class="row justify-content-end">
+    <div class="col-8 mb-4">
+        <%= form_with url: legos_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a model" %>
+          <%= submit_tag "Search", class: "btn btn-outline-secondary" %>
+        <% end %>
+      </div>
+    <div class="col-4 addbutton"> <%= link_to "+ New Model", new_lego_path, class: 'btn btn-outline-secondary' %> </div>
+  </div>
+
+  <div class="row">
+    <% @legos.reverse_each do |lego| %>
+      <div class="col-xl-4 col-md-6 mb-4" onclick="this.querySelector('a').click(); return true;" onmouseover="" style="cursor: pointer;">
+        <div class="card-trip">
+    <% if lego.photo.attached? %>
+      <%= cl_image_tag(lego.photo.key, class:"card-image") %>
+    <% else %>
+      <img src="https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80" alt="photo">
+    <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= link_to lego.title, lego_path(lego) %></h2>
+              <p><%= lego.number_of_parts %> pieces</p>
+              <p>Owner: <%= lego.user.email %></p>
+            </div>
+            <h2 class="card-trip-pricing"><%=lego.number_of_parts * 2 %> EUR / day </h2>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
